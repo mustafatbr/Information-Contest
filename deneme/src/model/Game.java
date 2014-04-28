@@ -157,7 +157,7 @@ public String getCurrentQuestionline(){
 		
 		}else if(answer==JOKER && !joker){
 			
-			useFiftyFifty();
+			useFF();
 			System.out.println("yarý yarýya jokeri kullanýldý");
 		joker=true;
 			//nextQuestion();
@@ -180,7 +180,7 @@ public String getCurrentQuestionline(){
 		nextQuestion();
 	}
 
-	public int[] useFiftyFifty() {
+	public int[] useFF() {
 		
 		
 		int falseOne=findFalseAnswer(4);

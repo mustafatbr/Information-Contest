@@ -20,38 +20,7 @@ public class Test implements ActionListener {
 	private static Game game;
 	private static view view = new view();
 	
-	public Test() {
-
-		view.setVisible(true); // make visual component appear
-		view.addButtonActionListener(this);
-		
-		view.getBtnFiftyFifty().addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				//view.getBtnFiftyFifty().setEnabled(false);
-				view.getBtnFiftyFifty().setIcon(new ImageIcon("D:\\Yerel Disk E\\DERSLER\\3.s\u0131n\u0131f\\Software\\PROJE\\workspace\\WhoWantsToBeAMillionare\\c_50.jpg"));
-				
-				if(game.getjoker()==false){
-				int disableBtn[]=(game.useFiftyFifty());
-				view.getButtons().get(disableBtn[0]).setEnabled(false);
-				view.getButtons().get(disableBtn[1]).setEnabled(false);
-				}
-			}
-		});
-
-		view.getBtnYarmadanekil().addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("Yarýþmadan Çekildiniz");
-				//view.getNotificationLabel().setText("Yarýþmadan Çekildiniz");
-				if(game.getI()>0)
-					view.getPrize().setText(game.getPrizes()[game.getI()-1]+"");
-				else
-					view.getPrize().setText("0");
-				disableAllButtons();
-			}
-
-			
-		});
-	}
+	
 
 	
 	public static void main(String[] args) {
@@ -121,13 +90,13 @@ public class Test implements ActionListener {
 	public static void showQuestion() {
 		// TODO Auto-generated method stub
 		view.getQuestionTextArea().setText(game.getCurrentQuestion().getQuestion());
-		//System.out.println(game.getCurrentLevel());
+	
 		for (int i = 0; i < view.getButtons().size(); i++) {
-			//view.getButtons().get(i).setText(game.getCurrentQuestion().getChoices().get(i).getAnswer());
+			
 			view.getButtons().get(i).setText(game.getQuestions().get(game.getI()).getChoices().get(i).getAnswer());
 			view.getButtons().get(i).setEnabled(true);
 		}
-		//view.getNotificationLabel().setText("");
+	
 		view.getQuestionNum().setText((game.getI()+1)+".");
 		view.getPrize().setText(game.getPrizes()[game.getI()]+"");
 	}
@@ -135,7 +104,7 @@ public class Test implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		
 		int givenAnswer;
 		
 		if (e.getSource()==view.getBtn0()) {
@@ -159,12 +128,12 @@ public class Test implements ActionListener {
 			System.out.println("Doðru");
 		}else if(temp==0){
 			System.out.println("Yarýþma bitti");
-			//view.getNotificationLabel().setText("Yanlýþ Cevap");
+			
 			view.getPrize().setText(game.getMinimumPrize()+"");
 			disableAllButtons();
 		}else if(temp==2) {
 			System.out.println("Büyük Ödülü Kazandýnýz controller");
-			//view.getNotificationLabel().setText("Büyük Ödülü Kazandýnýz");
+			
 			view.getPrize().setText(game.getPrizes()[game.getI()]+"");
 			disableAllButtons();
 		}
@@ -173,11 +142,43 @@ public class Test implements ActionListener {
 	}
 	
 	public void disableAllButtons() {
-	// TODO Auto-generated method stub
+
 	for (int i = 0; i < view.getButtons().size(); i++) {
 		view.getButtons().get(i).setEnabled(false);
 	}
-	view.getBtnFiftyFifty().setEnabled(false);
+	view.getBtnFF().setEnabled(false);
 	
 }
+	public Test() {
+
+		view.setVisible(true); // make visual component appear
+		view.addButtonActionListener(this);
+		
+		view.getBtnFF().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				view.getBtnFF().setIcon(new ImageIcon("D:\\Yerel Disk E\\DERSLER\\3.s\u0131n\u0131f\\Software\\PROJE\\workspace\\WhoWantsToBeAMillionare\\c_50.jpg"));
+				
+				if(game.getjoker()==false){
+				int disableBtn[]=(game.useFF());
+				view.getButtons().get(disableBtn[0]).setEnabled(false);
+				view.getButtons().get(disableBtn[1]).setEnabled(false);
+				}
+			}
+		});
+
+		view.getBtnExit().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Yarýþmadan Çekildiniz");
+				
+				if(game.getI()>0)
+					view.getPrize().setText(game.getPrizes()[game.getI()-1]+"");
+				else
+					view.getPrize().setText("0");
+				disableAllButtons();
+			}
+
+			
+		});
+	}
 }

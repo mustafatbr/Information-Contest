@@ -24,18 +24,18 @@ public class view extends JFrame {
 	private JButton btn2;
 	private ArrayList<JButton> buttons;
 	private JPanel panel;
-	private JButton btnFiftyFifty;
+	private JButton btnFF;
 	private JLabel questionNum;
 	private JLabel prize;
 	private JLabel notificationLabel;
-	private JButton btnYarmadanekil;
+	private JButton btnExit;
 	
-	public JButton getBtnYarmadanekil() {
-		return btnYarmadanekil;
+	public JButton getBtnExit() {
+		return btnExit;
 	}
 
-	public void setBtnYarmadanekil(JButton btnYarmadanekil) {
-		this.btnYarmadanekil = btnYarmadanekil;
+	public void setBtnExit(JButton btnExit) {
+		this.btnExit = btnExit;
 	}
 
 	public JLabel getNotificationLabel() {
@@ -57,12 +57,12 @@ public class view extends JFrame {
 	
 
 
-	public JButton getBtnFiftyFifty() {
-		return btnFiftyFifty;
+	public JButton getBtnFF() {
+		return btnFF;
 	}
 
-	public void setBtnFiftyFifty(JButton btnFiftyFifty) {
-		this.btnFiftyFifty = btnFiftyFifty;
+	public void setBtnFF(JButton btnFF) {
+		this.btnFF = btnFF;
 	}
 
 	public JLabel getQuestionNum() {
@@ -168,10 +168,10 @@ public class view extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("\u00D6d\u00FCl:");
 		
-		btnFiftyFifty = new JButton("Yar\u0131 Yar\u0131ya");
-		btnFiftyFifty.setIcon(new ImageIcon("D:\\Yerel Disk E\\DERSLER\\3.s\u0131n\u0131f\\Software\\PROJE\\workspace\\WhoWantsToBeAMillionare\\5050.jpg"));
+		btnFF = new JButton("Yar\u0131 Yar\u0131ya");
+		btnFF.setIcon(new ImageIcon("D:\\Yerel Disk E\\DERSLER\\3.s\u0131n\u0131f\\Software\\PROJE\\workspace\\WhoWantsToBeAMillionare\\5050.jpg"));
 		
-		btnYarmadanekil = new JButton("Yar\u0131\u015Fmadan \u00C7ekil");
+		btnExit = new JButton("Yar\u0131\u015Fmadan \u00C7ekil");
 		
 		JLabel lblSoru = new JLabel("Soru:");
 		
@@ -207,8 +207,8 @@ public class view extends JFrame {
 							.addComponent(questionTextArea, GroupLayout.PREFERRED_SIZE, 448, GroupLayout.PREFERRED_SIZE)
 							.addGap(18)
 							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-								.addComponent(btnFiftyFifty, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnYarmadanekil))
+								.addComponent(btnFF, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE)
+								.addComponent(btnExit))
 							.addGap(87))
 						.addGroup(gl_panel.createSequentialGroup()
 							.addComponent(notificationLabel, GroupLayout.PREFERRED_SIZE, 399, GroupLayout.PREFERRED_SIZE)
@@ -221,9 +221,9 @@ public class view extends JFrame {
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 						.addComponent(questionTextArea, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE)
 						.addGroup(gl_panel.createSequentialGroup()
-							.addComponent(btnFiftyFifty, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+							.addComponent(btnFF, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
 							.addGap(20)
-							.addComponent(btnYarmadanekil)))
+							.addComponent(btnExit)))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btn1, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
