@@ -1,19 +1,58 @@
 package test;
 
+import gameview.view;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
+
+import gameview.view;
 import model.Answers;
 import model.Game;
 import model.Player;
 import model.Question;
-
-public class Test {
-
+public class Test implements ActionListener {
 	/**
 	 * @param args
 	 */
-
 	private static Game game;
+	private static view view = new view();
+	
+	public Test() {
+
+		view.setVisible(true); // make visual component appear
+		view.addButtonActionListener(this);
+		
+		view.getBtnFiftyFifty().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//view.getBtnFiftyFifty().setEnabled(false);
+				view.getBtnFiftyFifty().setIcon(new ImageIcon("D:\\Yerel Disk E\\DERSLER\\3.s\u0131n\u0131f\\Software\\PROJE\\workspace\\WhoWantsToBeAMillionare\\c_50.jpg"));
+				
+				if(game.getjoker()==false){
+				int disableBtn[]=(game.useFiftyFifty());
+				view.getButtons().get(disableBtn[0]).setEnabled(false);
+				view.getButtons().get(disableBtn[1]).setEnabled(false);
+				}
+			}
+		});
+
+		view.getBtnYarmadanekil().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Yarýþmadan Çekildiniz");
+				//view.getNotificationLabel().setText("Yarýþmadan Çekildiniz");
+				if(game.getI()>0)
+					view.getPrize().setText(game.getPrizes()[game.getI()-1]+"");
+				else
+					view.getPrize().setText("0");
+				disableAllButtons();
+			}
+
+			
+		});
+	}
+
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -62,10 +101,10 @@ public class Test {
 		answerlist4.add(a15);
 	answerlist4.add(a16);
 		
-	    Question q1 = new Question("Mustafa Kemal Atatürk’ün Nüfusa Kayýtlý Olduðu Ýl Hangisidir? ",answerlist2);
-	    Question q2 = new Question("Aþaðýdakilerden Hangisi Dünya Saðlýk Örgütünün Kýsaltýlmýþ Ýsmidir? ", answerlist3);
-		Question q3 = new Question("Hangi Ýlimizde Demiryolu Yoktur?  ", answerlist4);
-		Question q4 = new Question("“Sinekli Bakkal” Romanýnýn Yazarý Aþaðýdakilerden Hangisidir?",  answerlist);
+	    Question q1 = new Question("Mustafa Kemal Atatürk’ün Nüfusa Kayýtlý Olduðu Ýl Hangisidir? ",1,answerlist2);
+	    Question q2 = new Question("Aþaðýdakilerden Hangisi Dünya Saðlýk Örgütünün Kýsaltýlmýþ Ýsmidir? ",2, answerlist3);
+		Question q3 = new Question("Hangi Ýlimizde Demiryolu Yoktur?  ",3, answerlist4);
+		Question q4 = new Question("“Sinekli Bakkal” Romanýnýn Yazarý Aþaðýdakilerden Hangisidir?",4,  answerlist);
 		
 		Player p1 =  new Player("Mustafa", 0);
 		  ArrayList<Question> questionlist = new ArrayList<Question>();
@@ -74,25 +113,71 @@ public class Test {
 		questionlist.add(q3);
 		questionlist.add(q4);
 		game =  new Game(questionlist, p1);
+		new Test();
 		
-		game.startGame();
-
+		showQuestion();
 	}
-public String question1(ArrayList<Question> questionList2){
+
+	public static void showQuestion() {
+		// TODO Auto-generated method stub
+		view.getQuestionTextArea().setText(game.getCurrentQuestion().getQuestion());
+		//System.out.println(game.getCurrentLevel());
+		for (int i = 0; i < view.getButtons().size(); i++) {
+			//view.getButtons().get(i).setText(game.getCurrentQuestion().getChoices().get(i).getAnswer());
+			view.getButtons().get(i).setText(game.getQuestions().get(game.getI()).getChoices().get(i).getAnswer());
+			view.getButtons().get(i).setEnabled(true);
+		}
+		//view.getNotificationLabel().setText("");
+		view.getQuestionNum().setText((game.getI()+1)+".");
+		view.getPrize().setText(game.getPrizes()[game.getI()]+"");
+	}
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		int givenAnswer;
+		
+		if (e.getSource()==view.getBtn0()) {
+			System.out.println("Btn0 is clicked ");
+			givenAnswer=0;
+		}else if (e.getSource()==view.getBtn1()) {
+			givenAnswer=1;
+			System.out.println("Btn1 is clicked ");
+		}else if (e.getSource()==view.getBtn2()) {
+			givenAnswer=2;
+			System.out.println("Btn2 is clicked ");
+		}else if (e.getSource()==view.getBtn3()) {
+			givenAnswer=3;
+			System.out.println("Btn3 is clicked ");
+		}else{
+			givenAnswer=4;
+		}
+		int temp=game.checkTrue(givenAnswer);
+		if (temp==1) {
+			showQuestion();
+			System.out.println("Doðru");
+		}else if(temp==0){
+			System.out.println("Yarýþma bitti");
+			//view.getNotificationLabel().setText("Yanlýþ Cevap");
+			view.getPrize().setText(game.getMinimumPrize()+"");
+			disableAllButtons();
+		}else if(temp==2) {
+			System.out.println("Büyük Ödülü Kazandýnýz controller");
+			//view.getNotificationLabel().setText("Büyük Ödülü Kazandýnýz");
+			view.getPrize().setText(game.getPrizes()[game.getI()]+"");
+			disableAllButtons();
+		}
+		else
+			System.out.println("diðer");
+	}
 	
-	return questionList2.get(0).question + questionList2.get(0).getAnswers() ;
+	public void disableAllButtons() {
+	// TODO Auto-generated method stub
+	for (int i = 0; i < view.getButtons().size(); i++) {
+		view.getButtons().get(i).setEnabled(false);
+	}
+	view.getBtnFiftyFifty().setEnabled(false);
+	
 }
-public String question2(ArrayList<Question> questionList2) {
-
-	return  questionList2.get(1).question + questionList2.get(1).getAnswers() ;
-}
-public String question3(ArrayList<Question> questionList2) {
-
-	return  questionList2.get(2).question + questionList2.get(2).getAnswers() ;
-}
-public String question4(ArrayList<Question> questionList2) {
-
-	return  questionList2.get(3).question + questionList2.get(3).getAnswers() ;
-}
-
 }
