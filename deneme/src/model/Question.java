@@ -9,10 +9,10 @@ public class Question {
 	public int questionLevel;
 	public ArrayList<Answers> choices;
 	
-	public Question(String question,int questionLevel,ArrayList<Answers> choices) {
+	public Question(String question,
+			ArrayList<Answers> choices) {
 		super();
 		this.question = question;
-		this.questionLevel = questionLevel;
         this.choices = choices;
 	}
 
@@ -23,13 +23,7 @@ public class Question {
 	public void setQuestion(String question) {
 		this.question = question;
 	}
-	public int getQuestionLevel() {
-		return questionLevel;
-	}
 
-	public void setQuestionLevel(int questionLevel) {
-		this.questionLevel = questionLevel;
-	}
 	
 
 	public ArrayList<Answers> getChoices() {
