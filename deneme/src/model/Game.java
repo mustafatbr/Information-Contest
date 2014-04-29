@@ -20,7 +20,7 @@ public class Game {
 	private static long minimumPrize;
 	private int userAnswer;
 	private static Question currentQuestion;
-	private static long prizes[] = {0,100, 200, 300, 500};
+	private static long prizes[] = {0,100, 200, 300, 500, 1000, 2000, 4000, 8000, 16000, 32000, 64000, 125000, 250000, 500000, 1000000};
 	 ArrayList check = new ArrayList();
 	
 	 private static view view = new view();
@@ -112,20 +112,7 @@ public String getCurrentQuestionline(){
 	
 	public void nextQuestion(){
 		setCurrentQuestion(questions.get(i));
-//		Scanner input = new Scanner(System.in);
-//		System.out.println(getCurrentQuestion());
-//		String str = input.nextLine();
-//		if(str.equalsIgnoreCase("a"))
-//			userAnswer = 0;
-//		else if(str.equalsIgnoreCase("b"))
-//			userAnswer = 1;
-//		else if(str.equalsIgnoreCase("c"))
-//			userAnswer = 2;
-//		else if(str.equalsIgnoreCase("d"))
-//			userAnswer = 3;
-//		
-//		checkTrue();
-		
+	
 	}
 	
 	public static int checkTrue(int answer){
@@ -138,7 +125,7 @@ public String getCurrentQuestionline(){
 				
 				System.out.println("seviye:"+i);
 				
-				if(i==4){
+				if(i==15){
 					System.out.println("Büyük Ödülü kazandýnýz. Yarýþmamýz burada sona eriyor.");
 					return 2;
 				}else{
@@ -149,8 +136,16 @@ public String getCurrentQuestionline(){
 			}else{
 				System.out.println("Yanlýþ cevap");
 				System.out.println("Kazanýlan Ödül: "+minimumPrize);
-				if(i>=2){
-					minimumPrize=prizes[2];
+				if(i>=5&&i<10){
+					minimumPrize=prizes[5];
+				}
+				else if(i>=7&&i<10)
+				{
+					minimumPrize=prizes[7];
+				}
+				else if(i>=10&&i<13)
+				{
+					minimumPrize=prizes[10];
 				}
 				return 0;
 			}
@@ -171,8 +166,16 @@ public String getCurrentQuestionline(){
 	}
 	private static void checkBarage() {
 		// TODO Auto-generated method stub
-		if(i>=2){
-			minimumPrize=prizes[2];
+		if(i>=5&&i<10){
+			minimumPrize=prizes[5];
+		}
+		else if(i>=7&&i<10)
+		{
+			minimumPrize=prizes[7];
+		}
+		else if(i>=10&&i<13)
+		{
+			minimumPrize=prizes[10];
 		}
 	}
 	public void startGame(){

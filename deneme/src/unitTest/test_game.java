@@ -17,7 +17,7 @@ public class test_game {
 	public void test() {
 		//control the first question's answer control is true
          Game game;
-		 Player p1 =  new Player("Mustafa", 0);
+		 Player p1 =  new Player("Dünya", 0);
 		 ArrayList<Question> questionlist = new ArrayList<Question>();
 		
 		 Answers a1 = new Answers("Reþat Nuri Güntekin",false );
@@ -86,7 +86,7 @@ public class test_game {
 	public void test2() {
 		//control the first question's answer control is true
          Game game;
-		 Player p1 =  new Player("Mustafa", 0);
+		 Player p1 =  new Player("Dünya", 0);
 		 ArrayList<Question> questionlist = new ArrayList<Question>();
 		
 		 Answers a1 = new Answers("Reþat Nuri Güntekin",false );
