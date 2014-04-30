@@ -3,14 +3,14 @@ package model;
 import gameview.view;
 
 import java.util.ArrayList;
-import java.util.Scanner;
+
 import java.util.Random;
 
 import javax.swing.ImageIcon;
 
 import main.mainDemo;
 public class Game {
-	private mainDemo question; 
+ 
 	private final static int JOKER=3;
 	private static int i,number;
 	private  static ArrayList<Question> questions;
@@ -21,7 +21,7 @@ public class Game {
 	private int userAnswer;
 	private static Question currentQuestion;
 	private static long prizes[] = {0,100, 200, 300, 500, 1000, 2000, 4000, 8000, 16000, 32000, 64000, 125000, 250000, 500000, 1000000};
-	 ArrayList check = new ArrayList();
+	
 	
 	 private static view view = new view();
 		
@@ -110,10 +110,7 @@ public String getCurrentQuestionline(){
 	return questions.get(getI()).getQuestion() + questions.get(getI()).getAnswers() ;
 	}
 	
-	public void nextQuestion(){
-		setCurrentQuestion(questions.get(i));
 	
-	}
 	
 	public static int checkTrue(int answer){
 		if(answer<4){
@@ -129,7 +126,7 @@ public String getCurrentQuestionline(){
 					System.out.println("Büyük Ödülü kazandýnýz. Yarýþmamýz burada sona eriyor.");
 					return 2;
 				}else{
-					//nextQuestion();
+					
 					currentQuestion=questions.get(i);
 					return 1;
 				}
@@ -155,12 +152,12 @@ public String getCurrentQuestionline(){
 			useFF();
 			System.out.println("yarý yarýya jokeri kullanýldý");
 		joker=true;
-			//nextQuestion();
+		
 			return 3;
 			
 		}else{
 			System.out.println("Bu jokeri daha önce kullandýnýz veya yanlýþ karakter girdiniz.");
-			//nextQuestion();
+			
 			return 4;
 		}
 	}
@@ -178,10 +175,7 @@ public String getCurrentQuestionline(){
 			minimumPrize=prizes[10];
 		}
 	}
-	public void startGame(){
-		System.out.println("Welcome Mr. "+player.getName()+" Games Are Starting...\n");
-		nextQuestion();
-	}
+
 
 	public static int[] useFF() {
 		
@@ -190,7 +184,6 @@ public String getCurrentQuestionline(){
 		int falseTwo=findFalseAnswer(falseOne);
 		int ff[]={falseOne,falseTwo};
 		
-		//System.out.println("yanlýþ iki cevap: "+questionList.get(currentLevel).getChoices().get(falseOne).getAnswerStr() +" ve "+questionList.get(currentLevel).getChoices().get(falseTwo).getAnswerStr());
 		joker=true;
 		return ff;
 	

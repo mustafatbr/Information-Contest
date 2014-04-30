@@ -134,7 +134,7 @@ public class view extends JFrame {
 	 */
 	public view() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 712, 520);
+		setBounds(100, 100, 687, 423);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -145,15 +145,17 @@ public class view extends JFrame {
 		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 676, Short.MAX_VALUE)
+					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 641, Short.MAX_VALUE)
 					.addContainerGap())
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.TRAILING)
-				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
+				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
+					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 371, Short.MAX_VALUE)
+					.addContainerGap())
 		);
 		
 				questionTextArea = new JTextArea();
@@ -162,14 +164,14 @@ public class view extends JFrame {
 				questionTextArea.setRows(3);
 				questionTextArea.setEditable(false);
 				questionTextArea.setFont(new Font("sansserif", Font.BOLD+Font.ITALIC, 17));
-				questionTextArea.setText("sdaadssaddsadsa sad s dasd daads  as ad ads ads ads ad ads as aaaa aaaaaa");
+				questionTextArea.setText("\u0130lk ekran");
 		
 				btn0 = new JButton("New button");
 				
 		btn2 = new JButton("New button");
-		//buttons.add(btn2);
+	
 		btn3 = new JButton("New button");
-		//buttons.add(btn3);
+		
 		btn1 = new JButton("New button");
 		
 		notificationLabel = new JLabel("");
@@ -178,7 +180,7 @@ public class view extends JFrame {
 		JLabel lblNewLabel = new JLabel("Kazan\u0131lan \u00D6d\u00FCl:");
 		
 		btnFF = new JButton("");
-		btnFF.setIcon(new ImageIcon("D:\\Yerel Disk E\\DERSLER\\3.s\u0131n\u0131f\\Software\\PROJE\\workspace\\WhoWantsToBeAMillionare\\5050.jpg"));
+		btnFF.setIcon(new ImageIcon("C:\\Users\\ASUS\\git\\Information Contest\\deneme\\5050.jpg"));
 		
 		btnExit = new JButton("Yar\u0131\u015Fmadan \u00C7ekil");
 		
@@ -199,9 +201,6 @@ public class view extends JFrame {
 					.addContainerGap()
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_panel.createSequentialGroup()
-							.addComponent(notificationLabel, GroupLayout.PREFERRED_SIZE, 399, GroupLayout.PREFERRED_SIZE)
-							.addContainerGap())
-						.addGroup(gl_panel.createSequentialGroup()
 							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 								.addComponent(btn2, GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
 								.addComponent(btn0, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE))
@@ -211,17 +210,20 @@ public class view extends JFrame {
 								.addComponent(btn1, GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE))
 							.addGap(76))
 						.addGroup(gl_panel.createSequentialGroup()
-							.addComponent(lblSoru)
-							.addGap(18)
-							.addComponent(questionNum, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
-							.addGap(87))
-						.addGroup(gl_panel.createSequentialGroup()
 							.addComponent(questionTextArea, GroupLayout.PREFERRED_SIZE, 448, GroupLayout.PREFERRED_SIZE)
 							.addGap(18)
 							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-								.addComponent(btnFF, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnExit))
-							.addGap(87))
+								.addComponent(btnExit)
+								.addComponent(btnFF, GroupLayout.PREFERRED_SIZE, 69, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_panel.createSequentialGroup()
+									.addComponent(lblSoru)
+									.addGap(18)
+									.addComponent(questionNum, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)))
+							.addGap(52))
+						.addGroup(gl_panel.createSequentialGroup()
+							.addGap(322)
+							.addComponent(notificationLabel, GroupLayout.PREFERRED_SIZE, 201, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap(143, Short.MAX_VALUE))
 						.addGroup(gl_panel.createSequentialGroup()
 							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 								.addComponent(lblSonrakiSorununDeeri)
@@ -230,19 +232,25 @@ public class view extends JFrame {
 							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 								.addComponent(prize, GroupLayout.PREFERRED_SIZE, 179, GroupLayout.PREFERRED_SIZE)
 								.addComponent(prizeAfter))
-							.addContainerGap(362, Short.MAX_VALUE))))
+							.addContainerGap(315, Short.MAX_VALUE))))
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panel.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-						.addComponent(questionTextArea, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE)
+					.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING, false)
 						.addGroup(gl_panel.createSequentialGroup()
-							.addComponent(btnFF, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
-							.addGap(20)
-							.addComponent(btnExit)))
-					.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(btnFF, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)
+							.addGap(18)
+							.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblSoru)
+								.addComponent(questionNum))
+							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addComponent(btnExit)
+							.addGap(18))
+						.addGroup(gl_panel.createSequentialGroup()
+							.addComponent(questionTextArea, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)))
 					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btn1, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
 						.addComponent(btn0, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE))
@@ -250,21 +258,17 @@ public class view extends JFrame {
 					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btn3)
 						.addComponent(btn2))
-					.addGap(42)
-					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblSoru)
-						.addComponent(questionNum))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGap(18)
 					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblNewLabel)
 						.addComponent(prize, GroupLayout.PREFERRED_SIZE, 17, GroupLayout.PREFERRED_SIZE))
-					.addGap(9)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblSonrakiSorununDeeri)
 						.addComponent(prizeAfter))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(notificationLabel, GroupLayout.PREFERRED_SIZE, 68, GroupLayout.PREFERRED_SIZE)
-					.addGap(62))
+					.addGap(40)
+					.addComponent(notificationLabel, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+					.addGap(141))
 		);
 		buttons.add(btn0);
 		buttons.add(btn1);

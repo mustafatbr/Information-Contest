@@ -320,8 +320,8 @@ public class mainDemo implements ActionListener {
 		
 		view.getBtnFF().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				view.getBtnFF().setIcon(new ImageIcon("D:\\Yerel Disk E\\DERSLER\\3.s\u0131n\u0131f\\Software\\PROJE\\workspace\\WhoWantsToBeAMillionare\\c_50.jpg"));
+				JOptionPane.showMessageDialog(null, "yanlýþ olan iki þýk sizin için kaldýrýlýyor!!!");
+				view.getBtnFF().setIcon(new ImageIcon("C:\\Users\\ASUS\\git\\Information Contest\\deneme\\c_50.jpg"));
 				
 				if(game.getjoker()==false){
 				int disableBtn[]=(game.useFF());
@@ -337,7 +337,9 @@ public class mainDemo implements ActionListener {
 				
 				if(game.getI()>0){
 					view.getPrize().setText(game.getPrizes()[game.getI()]+"");
-				view.getPrizeAfter().setText("0");}
+					view.getPrizeAfter().setText(game.getPrizes()[game.getI()]+"");
+					JOptionPane.showMessageDialog(null, "Yarýþmadan çekildiniz!!!\n kazandýðýnýz miktar:"+game.getPrizes()[game.getI()]+"TL");
+					;}
 				else
 					view.getPrize().setText("0");
 				disableAllButtons();
