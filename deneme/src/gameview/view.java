@@ -30,6 +30,8 @@ public class view extends JFrame {
 	private JLabel notificationLabel;
 	private JButton btnExit;
 	private JLabel prizeAfter;
+	private JLabel lblHoGeldiniz;
+	private JLabel lblname;
 	public JLabel getPrizeAfter() {
 		return prizeAfter;
 	}
@@ -134,7 +136,7 @@ public class view extends JFrame {
 	 */
 	public view() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 687, 423);
+		setBounds(100, 100, 765, 423);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -193,64 +195,79 @@ public class view extends JFrame {
 		JLabel lblSonrakiSorununDeeri = new JLabel("Sonraki Sorunun De\u011Feri: ");
 		
 		 prizeAfter = new JLabel("prize2");
+		
+		JLabel lblKazandnzEnFazla = new JLabel("kazand\u0131\u011F\u0131n\u0131z en fazla miktar=");
+		
+		lblHoGeldiniz = new JLabel("Ho\u015F geldiniz ");
+		
+		lblname = new JLabel("");
 	
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel.createSequentialGroup()
-							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-								.addComponent(btn2, GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-								.addComponent(btn0, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE))
-							.addGap(18)
-							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING, false)
-								.addComponent(btn3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(btn1, GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE))
-							.addGap(76))
+					.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
 						.addGroup(gl_panel.createSequentialGroup()
 							.addComponent(questionTextArea, GroupLayout.PREFERRED_SIZE, 448, GroupLayout.PREFERRED_SIZE)
-							.addGap(18)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
 							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 								.addComponent(btnExit)
-								.addComponent(btnFF, GroupLayout.PREFERRED_SIZE, 69, GroupLayout.PREFERRED_SIZE)
 								.addGroup(gl_panel.createSequentialGroup()
 									.addComponent(lblSoru)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(questionNum, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED))
+								.addGroup(gl_panel.createSequentialGroup()
+									.addComponent(btnFF, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)))
+							.addGap(131))
+						.addGroup(gl_panel.createSequentialGroup()
+							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_panel.createSequentialGroup()
+									.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+										.addComponent(btn2, GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
+										.addComponent(btn0, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE))
+									.addGap(18))
+								.addGroup(gl_panel.createSequentialGroup()
+									.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+										.addComponent(lblSonrakiSorununDeeri)
+										.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 107, GroupLayout.PREFERRED_SIZE))
 									.addGap(18)
-									.addComponent(questionNum, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)))
-							.addGap(52))
-						.addGroup(gl_panel.createSequentialGroup()
-							.addGap(322)
-							.addComponent(notificationLabel, GroupLayout.PREFERRED_SIZE, 201, GroupLayout.PREFERRED_SIZE)
-							.addContainerGap(143, Short.MAX_VALUE))
-						.addGroup(gl_panel.createSequentialGroup()
-							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-								.addComponent(lblSonrakiSorununDeeri)
-								.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 107, GroupLayout.PREFERRED_SIZE))
-							.addGap(18)
-							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-								.addComponent(prize, GroupLayout.PREFERRED_SIZE, 179, GroupLayout.PREFERRED_SIZE)
-								.addComponent(prizeAfter))
-							.addContainerGap(315, Short.MAX_VALUE))))
+									.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+										.addComponent(prize, GroupLayout.PREFERRED_SIZE, 179, GroupLayout.PREFERRED_SIZE)
+										.addComponent(prizeAfter))
+									.addPreferredGap(ComponentPlacement.RELATED)))
+							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(btn3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(btn1, GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
+								.addGroup(gl_panel.createSequentialGroup()
+									.addGap(9)
+									.addComponent(lblKazandnzEnFazla)
+									.addGap(18)
+									.addComponent(notificationLabel, GroupLayout.PREFERRED_SIZE, 141, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_panel.createSequentialGroup()
+									.addGap(6)
+									.addComponent(lblHoGeldiniz, GroupLayout.PREFERRED_SIZE, 129, GroupLayout.PREFERRED_SIZE)
+									.addGap(18)
+									.addComponent(lblname, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE)))
+							.addGap(76))))
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panel.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING, false)
-						.addGroup(gl_panel.createSequentialGroup()
-							.addComponent(btnFF, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)
-							.addGap(18)
+						.addGroup(Alignment.LEADING, gl_panel.createSequentialGroup()
 							.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
 								.addComponent(lblSoru)
 								.addComponent(questionNum))
+							.addGap(15)
+							.addComponent(btnFF, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addComponent(btnExit)
-							.addGap(18))
-						.addGroup(gl_panel.createSequentialGroup()
-							.addComponent(questionTextArea, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.UNRELATED)))
+							.addComponent(btnExit))
+						.addComponent(questionTextArea, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE))
+					.addGap(18)
 					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btn1, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
 						.addComponent(btn0, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE))
@@ -258,17 +275,23 @@ public class view extends JFrame {
 					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btn3)
 						.addComponent(btn2))
-					.addGap(18)
-					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel)
-						.addComponent(prize, GroupLayout.PREFERRED_SIZE, 17, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblSonrakiSorununDeeri)
-						.addComponent(prizeAfter))
-					.addGap(40)
-					.addComponent(notificationLabel, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-					.addGap(141))
+					.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
+						.addGroup(gl_panel.createSequentialGroup()
+							.addGap(19)
+							.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblNewLabel)
+								.addComponent(prize, GroupLayout.PREFERRED_SIZE, 17, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblHoGeldiniz)
+								.addComponent(lblname, GroupLayout.PREFERRED_SIZE, 17, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblSonrakiSorununDeeri)
+								.addComponent(prizeAfter)
+								.addComponent(lblKazandnzEnFazla, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+						.addGroup(gl_panel.createSequentialGroup()
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(notificationLabel, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)))
+					.addGap(206))
 		);
 		buttons.add(btn0);
 		buttons.add(btn1);
@@ -276,6 +299,22 @@ public class view extends JFrame {
 		buttons.add(btn3);
 		panel.setLayout(gl_panel);
 		contentPane.setLayout(gl_contentPane);
+	}
+
+	public JLabel getLblHoGeldiniz() {
+		return lblHoGeldiniz;
+	}
+
+	public void setLblHoGeldiniz(JLabel lblHoGeldiniz) {
+		this.lblHoGeldiniz = lblHoGeldiniz;
+	}
+
+	public JLabel getLblname() {
+		return lblname;
+	}
+
+	public void setLblname(JLabel lblname) {
+		this.lblname = lblname;
 	}
 
 	public void addButtonActionListener(ActionListener listener) {
