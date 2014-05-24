@@ -147,14 +147,6 @@ public String getCurrentQuestionline(){
 				return 0;
 			}
 		
-		}else if(answer==JOKER && !joker){
-			
-			useFF();
-			System.out.println("yarý yarýya jokeri kullanýldý");
-		joker=true;
-		
-			return 3;
-			
 		}else{
 			System.out.println("Bu jokeri daha önce kullandýnýz veya yanlýþ karakter girdiniz.");
 			

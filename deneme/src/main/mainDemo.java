@@ -127,17 +127,17 @@ static String ntlabel;
 		int givenAnswer;
 		
 		if (e.getSource()==view.getBtn0()) {
-		
+		//A
 			givenAnswer=0;
 		}else if (e.getSource()==view.getBtn1()) {
 			givenAnswer=1;
-			
+			//B
 		}else if (e.getSource()==view.getBtn2()) {
 			givenAnswer=2;
-			
+			//C
 		}else if (e.getSource()==view.getBtn3()) {
 			givenAnswer=3;
-			
+			//D
 		}else{
 			givenAnswer=4;
 		}
