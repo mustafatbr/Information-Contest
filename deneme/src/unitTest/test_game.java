@@ -5,18 +5,19 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 
 import model.Answers;
-import model.Game;
 import model.Player;
 import model.Question;
 
 import org.junit.Test;
+
+import controller.GameController;
 
 public class test_game {
 
 	@Test
 	public void test() {
 		//control the first question's answer control is true
-         Game game;
+         GameController game;
 		 Player p1 =  new Player("Dünya", 0);
 		 ArrayList<Question> questionlist = new ArrayList<Question>();
 		
@@ -76,16 +77,16 @@ public class test_game {
 		questionlist.add(q2);
 		questionlist.add(q3);
 		questionlist.add(q4);
-        game =  new Game(questionlist, p1);
+        game =  new GameController(questionlist, p1);
         game.setI(1);
         game.setJoker(false);
-		assertEquals(0,Game.checkTrue(3));	        
+		assertEquals(0,GameController.checkTrue(3));	        
 	}
 	
 	@Test
 	public void test2() {
 		//control the first question's answer control is true
-         Game game;
+         GameController game;
 		 Player p1 =  new Player("Dünya", 0);
 		 ArrayList<Question> questionlist = new ArrayList<Question>();
 		
@@ -145,10 +146,10 @@ public class test_game {
 		questionlist.add(q2);
 		questionlist.add(q3);
 		questionlist.add(q4);
-        game =  new Game(questionlist, p1);
+        game =  new GameController(questionlist, p1);
         game.setI(1);
         game.setJoker(false);
-		assertEquals(1,Game.checkTrue(2));	        
+		assertEquals(1,GameController.checkTrue(2));	        
 	}
 
 }

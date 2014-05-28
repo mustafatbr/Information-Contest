@@ -18,8 +18,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import controller.mainDemoController;
 import databaseConnection.ConnectionDB;
-import main.mainDemo;
 import model.Player;
 
 public class Login extends JFrame implements ActionListener {
@@ -79,7 +79,7 @@ public class Login extends JFrame implements ActionListener {
                     System.out.println(rs);
                     if (rs.next()) {
                      System.out.println(txtUName.getText());
-                          new mainDemo(txtUName.getText());
+                          new mainDemoController(txtUName.getText());
                           this.dispose();
                     }else{
                         JOptionPane.showMessageDialog(null,"Invalid username or password","Invalid",JOptionPane.ERROR_MESSAGE);

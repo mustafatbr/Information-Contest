@@ -22,6 +22,8 @@ public class view extends JFrame {
 	private JButton btn1;
 	private JButton btn0;
 	private JButton btn2;
+	private JButton btnTekrarOyna;
+	
 	private ArrayList<JButton> buttons;
 	private JPanel panel;
 	private JButton btnFF;
@@ -34,6 +36,13 @@ public class view extends JFrame {
 	private JLabel lblname;
 	public JLabel getPrizeAfter() {
 		return prizeAfter;
+	}
+	public JButton getBtnTekrarOyna() {
+		return btnTekrarOyna;
+	}
+
+	public void setBtnTekrarOyna(JButton btnTekrarOyna) {
+		this.btnTekrarOyna = btnTekrarOyna;
 	}
 
 	public void setPrizeAfter(JLabel prizeAfter) {
@@ -201,6 +210,8 @@ public class view extends JFrame {
 		lblHoGeldiniz = new JLabel("Ho\u015F geldiniz ");
 		
 		lblname = new JLabel("");
+		
+		btnTekrarOyna = new JButton("tekrar oyna");
 	
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
@@ -216,18 +227,15 @@ public class view extends JFrame {
 								.addGroup(gl_panel.createSequentialGroup()
 									.addComponent(lblSoru)
 									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(questionNum, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED))
-								.addGroup(gl_panel.createSequentialGroup()
-									.addComponent(btnFF, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)))
+									.addComponent(questionNum, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE))
+								.addComponent(btnFF, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE))
 							.addGap(131))
 						.addGroup(gl_panel.createSequentialGroup()
 							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 								.addGroup(gl_panel.createSequentialGroup()
 									.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-										.addComponent(btn2, GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
-										.addComponent(btn0, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE))
+										.addComponent(btn2, GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
+										.addComponent(btn0, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE))
 									.addGap(18))
 								.addGroup(gl_panel.createSequentialGroup()
 									.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
@@ -250,15 +258,16 @@ public class view extends JFrame {
 									.addGap(6)
 									.addComponent(lblHoGeldiniz, GroupLayout.PREFERRED_SIZE, 129, GroupLayout.PREFERRED_SIZE)
 									.addGap(18)
-									.addComponent(lblname, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE)))
+									.addComponent(lblname, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE))
+								.addComponent(btnTekrarOyna))
 							.addGap(76))))
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panel.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING, false)
-						.addGroup(Alignment.LEADING, gl_panel.createSequentialGroup()
+					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING, false)
+						.addGroup(gl_panel.createSequentialGroup()
 							.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
 								.addComponent(lblSoru)
 								.addComponent(questionNum))
@@ -291,7 +300,9 @@ public class view extends JFrame {
 						.addGroup(gl_panel.createSequentialGroup()
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(notificationLabel, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)))
-					.addGap(206))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(btnTekrarOyna)
+					.addGap(30))
 		);
 		buttons.add(btn0);
 		buttons.add(btn1);
